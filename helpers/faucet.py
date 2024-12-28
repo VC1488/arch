@@ -35,7 +35,7 @@ async def faucet(address, private_key):
     async with aiohttp.ClientSession() as session:
         try:
             response_data = await send_faucet_request(session, url, payload, proxy)
-            logger.info(f"Response: {response_data}")
+            logger.info(f"Success: {response_data['txid']}")
         except Exception as e:
             logger.error(f"Error: {e}")
 
